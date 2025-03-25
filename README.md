@@ -57,8 +57,8 @@ String token = new JWTBuilder()
 ### Parsing a JWT
 Parsing a JWT is done using the `JWTReader` class. Simply call the `readAny` static method with the JWT and a `KeySupplier`
 object. The reader will read the JOSE header to determine which key is required and ask the provided `KeySupplier` for 
-it. The simplest `KeySupplier` is one that only contains a single key, but more complex `KeySupplier`s can be created
-in situations where more than one key can be valid.
+it. The simplest `KeySupplier` is one that only contains a single key, but more complex `KeySupplier` implementations 
+can be created in situations where more than one key can be valid.
 
 Example 3: Parsing an unencrypted, signed JWT
 ```java
@@ -116,7 +116,7 @@ boolean valid = verifier.verify(token);
 ### KeyStores
 A `KeyStore` is, as the name would suggest, storage for keys. As an interface it declares methods for retrieving, putting,
 or clearing keys by name. By default, one implementation exists: the `FileKeyStore`, which stores keys on disk. From 
-`KeyStore`s you can create `KeySupplier`s. 
+a `KeyStore` you can create `KeySupplier` objects. 
 
 Example 7: Using a FileKeyStore to encode and decode tokens.
 ```java
@@ -142,6 +142,6 @@ boolean parseAndVerify(String token) {
     SerializeResult<JWT> out = JWTReader.readAny(token, keySupplier); 
     if(!out.isSuccess()) return false;
     
-    return verifier.verify(out);
+    return verifier.verify(out.getOrThrow());
 }
 ```
