@@ -21,7 +21,7 @@ Key files should have one of the following extensions:
 ## Library Usage
 
 ### Installation
-The library is published in the maven repository at `https://maven.wallentines.org/`.
+The library is published in the maven repository at `https://maven.wallentines.org/releases`.
 The latest version is `0.1.0`.
 
 ### Creating a JWT
@@ -139,7 +139,7 @@ String generateToken(ConfigSection payload) {
 boolean parseAndVerify(String token) {
     
     KeySupplier keySupplier = keyStore.supplier(); // Will search for the key specified by the "kid" header claim of the token.
-    SerializeResult<JWT> out = JWTReader.readAny(token, keyStore.supplier()); 
+    SerializeResult<JWT> out = JWTReader.readAny(token, keySupplier); 
     if(!out.isSuccess()) return false;
     
     return verifier.verify(out);
