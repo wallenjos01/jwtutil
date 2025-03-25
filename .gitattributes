@@ -1,0 +1,10 @@
+*   text=auto
+*.java  text
+*.kts   text
+*.json  text
+*.md    text
+*.properties    text
+*.toml  text
+*.bat   text eol=crlf
+gradlew text eol=lf
+*.jar   -text

@@ -1,0 +1,54 @@
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+.idea
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+/api/run/test/test_write.json
+/api/run/test/test_created.json
+/api/run/test/test_defaults.json
+/api/run/test/test_empty.json
+/api-sql/run
+
+/cfgtool/run
+
+/codec-binary/run
+/codec-gson/run
+
+/codec-nbt/run/test/*.out
+/codec-nbt/run/test/*.snbt

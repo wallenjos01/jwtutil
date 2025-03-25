@@ -1,0 +1,21 @@
+[versions]
+junit = "5.10.0"
+jetbrains = "24.1.0"
+slf4j = "2.0.16"
+gson = "2.11.0"
+zstd = "1.5.6-5"
+
+mdcfg = "3.0.1"
+mdlib = "2.0.0"
+
+[libraries]
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+jetbrains-annotations = { module = "org.jetbrains:annotations", version.ref = "jetbrains" }
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
+google-gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+zstd-jni = { module = "com.github.luben:zstd-jni", version.ref = "zstd" }
+midnight-cfg-api = { module = "org.wallentines:midnightcfg-api", version.ref="mdcfg" }
+midnight-cfg-codec-json = { module = "org.wallentines:midnightcfg-codec-json", version.ref="mdcfg" }
+midnight-lib = { module = "org.wallentines:midnightlib", version.ref="mdlib" }
